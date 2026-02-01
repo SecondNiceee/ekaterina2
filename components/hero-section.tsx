@@ -118,12 +118,12 @@ export function HeroSection({ lang = "ru" }: HeroSectionProps) {
               <div className="absolute -inset-4 rounded-full border border-primary/20 bg-[#f7f7f7]" />
               <div className="absolute -inset-8 rounded-full border border-primary/10 " />
               
-              <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden bg-gradient-to-br from-primary/10 to-primary/5">
+              <div className="relative w-72 h-72 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] rounded-full overflow-hidden bg-gradient-to-br from-primary/10 to-primary/5">
                 <img  
                   src={assetPath("/ekaterina.webp")}
                   alt={lang === "en" 
                     ? "Ekaterina Kulbachinskaya — Pediatric Cardiologist-Arrhythmologist" 
-                    : "Екатерина Кульбачинская — детский кардиолог-аритмолог"
+                    : "Екатерина Кульбачинская — детский ��ардиолог-аритмолог"
                   }
                   className="w-full h-full object-cover object-top -translate-x-2 bg-white"
                   loading="eager"
