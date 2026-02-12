@@ -37,7 +37,7 @@ export function HeroSection({ lang = "ru" }: HeroSectionProps) {
       {/* Floating decorative elements */}
       <div className="absolute top-32 right-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-pulse" />
       <div className="absolute bottom-20 left-10 w-48 h-48 bg-primary/8 rounded-full blur-2xl" />
-      
+
       {/* Animated floating dots */}
       <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-primary/30 rounded-full animate-bounce" style={{ animationDelay: '0s', animationDuration: '3s' }} />
       <div className="absolute top-1/3 right-1/3 w-3 h-3 bg-primary/20 rounded-full animate-bounce" style={{ animationDelay: '1s', animationDuration: '4s' }} />
@@ -123,9 +123,9 @@ export function HeroSection({ lang = "ru" }: HeroSectionProps) {
                   src={assetPath("/ekaterina.webp")}
                   alt={lang === "en" 
                     ? "Ekaterina Kulbachinskaya — Pediatric Cardiologist-Arrhythmologist" 
-                    : "Екатерина Кульбачинская — детский ��ардиолог-аритмолог"
+                    : "Екатерина Кульбачинская — детский кардиолог-аритмолог"
                   }
-                  className="w-full h-full object-cover object-top -translate-x-2 bg-white"
+                  className="w-full h-full object-cover object-top  bg-white"
                   loading="eager"
                 />
               </div>
