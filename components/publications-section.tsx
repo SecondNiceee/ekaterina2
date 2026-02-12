@@ -78,6 +78,12 @@ export function PublicationsSection({ lang = "ru" }: PublicationsSectionProps) {
             <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl font-medium text-foreground leading-tight">
               {lang === "en" ? "Recent Publications" : "Актуальные публикации"}
             </h2>
+            <h3 className="text-base text-muted-foreground mt-3">
+              {lang === "en"
+                ? "Scientific articles and research by Ekaterina Kulbachinskaya"
+                : "Научные статьи и исследования Екатерины Кульбачинской"
+              }
+            </h3>
           </div>
 
           {/* Desktop Navigation arrows */}

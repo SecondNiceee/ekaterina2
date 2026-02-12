@@ -134,6 +134,12 @@ export function ConsultationSection({ lang = "ru" }: ConsultationSectionProps) {
           <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl font-medium text-foreground leading-tight">
             {lang === "en" ? "Choose a convenient consultation format" : "Выберите удобный формат консультации"}
           </h2>
+          <h3 className="text-base text-muted-foreground mt-3">
+            {lang === "en"
+              ? "Ekaterina Kulbachinskaya offers in-person, online, and second opinion consultations"
+              : "Екатерина Кульбачинская проводит очные, онлайн и консультации второго мнения"
+            }
+          </h3>
         </div>
 
         {/* Consultation types */}

@@ -40,6 +40,12 @@ export function DirectionsSection({ lang = "ru" }: DirectionsSectionProps) {
           <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl font-medium text-foreground leading-tight">
             {lang === "en" ? "Common Reasons for Consultation" : "Частые причины обращения"}
           </h2>
+          <h3 className="text-base text-muted-foreground mt-3">
+            {lang === "en"
+              ? "What patients consult Dr. Ekaterina Kulbachinskaya about"
+              : "С чем обращаются к врачу Екатерине Кульбачинской"
+            }
+          </h3>
         </div>
 
         {/* Directions grid */}

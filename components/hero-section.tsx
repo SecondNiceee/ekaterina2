@@ -60,6 +60,12 @@ export function HeroSection({ lang = "ru" }: HeroSectionProps) {
               <span className="text-primary">{lang === "en" ? "Kulbachinskaya" : "Кульбачинская"}</span>
             </h1>
             
+            <h3 className="sr-only">
+              {lang === "en" 
+                ? "Ekaterina Kulbachinskaya — Pediatric Cardiologist-Arrhythmologist in Moscow"
+                : "Екатерина Кульбачинская — детский кардиолог-аритмолог в Москве"
+              }
+            </h3>
             <p className="mt-6 text-lg md:text-xl text-muted-foreground leading-relaxed max-w-lg">
               {lang === "en" 
                 ? "I specialize in the diagnosis and management of children with heart rhythm disorders. I help navigate complex and non-standard situations, assess risks, and develop optimal monitoring strategies."
@@ -100,6 +106,12 @@ export function HeroSection({ lang = "ru" }: HeroSectionProps) {
 
             {/* Mini stats */}
             <div className="mt-12 pt-8 border-t border-border/50">
+              <h4 className="sr-only">
+                {lang === "en"
+                  ? "Ekaterina Kulbachinskaya's professional achievements"
+                  : "Профессиональные достижения Екатерины Кульбачинской"
+                }
+              </h4>
               <div className="flex gap-6 md:gap-10">
                 {heroStats.map((stat, index) => (
                   <div key={index} className="group cursor-default">
