@@ -91,6 +91,38 @@ export default function RootLayout({
       '@type': 'PostalAddress',
       addressLocality: 'Москва',
       addressCountry: 'RU'
+    },
+    sameAs: [
+      'https://t.me/smart_cardio',
+      'https://vk.com/smart_cardio',
+      'https://dzen.ru/smartcardio'
+    ],
+    hasCredential: {
+      '@type': 'EducationalOccupationalCredential',
+      credentialCategory: 'Кандидат медицинских наук',
+      recognizedBy: {
+        '@type': 'Organization',
+        name: 'РНИМУ им. Н.И. Пирогова'
+      }
+    },
+    alumniOf: [
+      {
+        '@type': 'EducationalOrganization',
+        name: 'Первый МГМУ им. И.М. Сеченова'
+      },
+      {
+        '@type': 'EducationalOrganization',
+        name: 'РНИМУ им. Н.И. Пирогова'
+      }
+    ],
+    worksFor: {
+      '@type': 'MedicalOrganization',
+      name: 'Институт Вельтищева',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Москва',
+        addressCountry: 'RU'
+      }
     }
   }
 

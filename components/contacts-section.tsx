@@ -42,6 +42,12 @@ export function ContactsSection({ lang = "ru" }: ContactsSectionProps) {
               <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl font-medium text-foreground leading-tight">
                 {lang === "en" ? "Social Media" : "Социальные сети"}
               </h2>
+              <h4 className="text-base text-muted-foreground mt-3">
+                {lang === "en"
+                  ? "Follow Ekaterina Kulbachinskaya on social media"
+                  : "Екатерина Кульбачинская в социальных сетях"
+                }
+              </h4>
             </div>
 
             {/* Social links */}
@@ -88,6 +94,12 @@ export function ContactsSection({ lang = "ru" }: ContactsSectionProps) {
               <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl font-medium text-foreground leading-tight">
                 {lang === "en" ? "My Projects" : "Мои проекты"}
               </h2>
+              <h4 className="text-base text-muted-foreground mt-3">
+                {lang === "en"
+                  ? "Medical and educational projects by Ekaterina Kulbachinskaya"
+                  : "Медицинские и образовательные проекты Екатерины Кульбачинской"
+                }
+              </h4>
             </div>
             
             <div className="bg-primary rounded-3xl p-6 md:p-8 text-primary-foreground relative overflow-hidden">

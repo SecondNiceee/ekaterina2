@@ -40,6 +40,12 @@ export function AboutSection({ lang = "ru" }: AboutSectionProps) {
               <>Профессиональный подход<br />к здоровью вашего ребёнка</>
             )}
           </h2>
+          <h3 className="text-base text-muted-foreground mt-3">
+            {lang === "en"
+              ? "Ekaterina Kulbachinskaya, MD, PhD — experience, education, and medical philosophy"
+              : "Кульбачинская Екатерина, к.м.н. — опыт, образование и врачебная философия"
+            }
+          </h3>
         </div>
 
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-14">
@@ -53,6 +59,12 @@ export function AboutSection({ lang = "ru" }: AboutSectionProps) {
               <div className="relative bg-card rounded-2xl p-6 border-2 border-border">
                 <div className="absolute left-0 top-6 bottom-6 w-1 bg-gradient-to-b from-primary via-primary/50 to-transparent rounded-full" />
                 
+                <h4 className="sr-only">
+                  {lang === "en"
+                    ? "Professional principles of Dr. Ekaterina Kulbachinskaya"
+                    : "Принципы работы врача Екатерины Кульбачинской"
+                  }
+                </h4>
                 <div className="space-y-4 pl-5">
                   {lang === "en" ? (
                     <>
@@ -90,6 +102,12 @@ export function AboutSection({ lang = "ru" }: AboutSectionProps) {
             </div>
 
             {/* Features */}
+            <h5 className="sr-only">
+              {lang === "en"
+                ? "Key qualities of cardiologist Ekaterina Kulbachinskaya"
+                : "Ключевые качества кардиолога Екатерины Кульбачинской"
+              }
+            </h5>
             <div className="grid sm:grid-cols-3 gap-3">
               {aboutFeatures.map((item, index) => (
                 <div 
@@ -117,6 +135,12 @@ export function AboutSection({ lang = "ru" }: AboutSectionProps) {
                 <h3 className="font-serif text-xl font-medium text-foreground">
                   {lang === "en" ? "Education and Experience" : "Образование и опыт"}
                 </h3>
+                <h6 className="sr-only">
+                  {lang === "en"
+                    ? "Education and career path of Ekaterina Kulbachinskaya"
+                    : "Образование и карьерный путь Екатерины Кульбачинской"
+                  }
+                </h6>
               </div>
 
               <div className="space-y-5">

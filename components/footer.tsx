@@ -25,12 +25,12 @@ export function Footer({ lang = "ru" }: FooterProps) {
                 </span>
               </div>
             </Link>
-            <p className="text-sm text-muted-foreground max-w-xs">
+            <h5 className="text-sm text-muted-foreground max-w-xs">
               {lang === "en" 
-                ? "MD, PhD (Candidate of Medical Sciences), Pediatric Cardiologist-Arrhythmologist. In-person and online consultations."
-                : "Кандидат медицинских наук, врач детский кардиолог-аритмолог. Консультации очно и онлайн."
+                ? "Ekaterina Kulbachinskaya — MD, PhD, Pediatric Cardiologist-Arrhythmologist. In-person and online consultations."
+                : "Екатерина Кульбачинская — кандидат медицинских наук, врач детский кардиолог-аритмолог. Консультации очно и онлайн."
               }
-            </p>
+            </h5>
           </div>
 
           {/* Navigation */}
@@ -76,9 +76,9 @@ export function Footer({ lang = "ru" }: FooterProps) {
 
         {/* Bottom bar */}
         <div className="mt-16 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-muted-foreground">
+          <h6 className="text-sm text-muted-foreground font-normal">
             &copy; {new Date().getFullYear()} {lang === "en" ? "Ekaterina Kulbachinskaya. All rights reserved." : "Екатерина Кульбачинская. Все права защищены."}
-          </p>
+          </h6>
           <p className="text-xs text-muted-foreground">
             {lang === "en" 
               ? "Information on this website does not replace medical consultation"
