@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight } from "@/components/icons"
 import { heroCredentials as heroCredentialsRu, heroStats as heroStatsRu } from "@/config/site"
 import { heroCredentials as heroCredentialsEn, heroStats as heroStatsEn } from "@/config/site-en"
 import { assetPath } from "@/lib/utils"

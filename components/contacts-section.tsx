@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { ArrowUpRight, ExternalLink } from "lucide-react"
+import { ArrowUpRight, ExternalLink } from "@/components/icons"
 import { socialLinks as socialLinksRu, projects as projectsRu } from "@/config/site"
 import { socialLinks as socialLinksEn, projects as projectsEn } from "@/config/site-en"
 import { useAnimateOnScroll } from "@/components/animate-on-scroll"

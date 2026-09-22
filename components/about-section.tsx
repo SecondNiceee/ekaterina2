@@ -1,6 +1,6 @@
 "use client"
 
-import { GraduationCap } from "lucide-react"
+import { GraduationCap } from "@/components/icons"
 import { educationItems as educationItemsRu, aboutFeatures as aboutFeaturesRu } from "@/config/site"
 import { educationItems as educationItemsEn, aboutFeatures as aboutFeaturesEn } from "@/config/site-en"
 import { useAnimateOnScroll } from "@/components/animate-on-scroll"

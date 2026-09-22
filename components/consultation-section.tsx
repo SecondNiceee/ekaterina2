@@ -13,7 +13,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight } from "@/components/icons"
 import Link from "next/link"
 import { toast } from "sonner"
 import { consultationTypes as consultationTypesRu } from "@/config/site"

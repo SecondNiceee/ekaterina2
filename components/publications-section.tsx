@@ -1,10 +1,9 @@
 "use client"
 
-import { ExternalLink } from "lucide-react"
+import { ExternalLink, ChevronLeft, ChevronRight } from "@/components/icons"
 import useEmblaCarousel from "embla-carousel-react"
 import { useCallback, useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
-import { ChevronLeft, ChevronRight } from "lucide-react"
 import { publications as publicationsRu } from "@/config/site"
 import { publications as publicationsEn } from "@/config/site-en"
 import { useAnimateOnScroll } from "@/components/animate-on-scroll"
