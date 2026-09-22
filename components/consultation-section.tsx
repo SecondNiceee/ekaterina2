@@ -80,7 +80,7 @@ export function ConsultationSection({ lang = "ru" }: ConsultationSectionProps) {
     setIsSubmitting(true)
     
     try {
-      const response = await fetch(`${basePath}/api/telegram`, {
+      const response = await fetch(`${basePath}/api/email`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
