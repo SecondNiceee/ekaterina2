@@ -17,16 +17,7 @@ export function AboutSection({ lang = "ru" }: AboutSectionProps) {
 
   return (
     <section id="about" className="py-12 md:py-20 relative overflow-hidden bg-gradient-to-b from-background via-muted/20 to-background">
-      {/* Background decoration */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-primary/8 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary/6 rounded-full blur-3xl" />
-      
-      {/* Dot pattern */}
-      <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle, currentColor 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
-      
-      {/* Decorative line */}
-      <div className="absolute bottom-0 right-1/3 w-px h-40 bg-gradient-to-t from-transparent via-primary/15 to-transparent" />
-      
+
       <div ref={sectionRef} className="mx-auto max-w-6xl px-6 lg:px-8 relative">
         {/* Section header */}
         <div className={`max-w-2xl mb-12 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
@@ -53,11 +44,8 @@ export function AboutSection({ lang = "ru" }: AboutSectionProps) {
           <div className={`lg:col-span-7 space-y-8 transition-all duration-700 delay-100 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
             {/* Quote block */}
             <div className="relative">
-              {/* Large decorative quote mark */}
-              <div className="absolute -left-4 -top-4 text-8xl font-serif text-primary/15 select-none leading-none">"</div>
               
               <div className="relative bg-card rounded-2xl p-6 border-2 border-border">
-                <div className="absolute left-0 top-6 bottom-6 w-1 bg-gradient-to-b from-primary via-primary/50 to-transparent rounded-full" />
                 
                 <h4 className="sr-only">
                   {lang === "en"
