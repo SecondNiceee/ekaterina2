@@ -14,23 +14,8 @@ export function DirectionsSection({ lang = "ru" }: DirectionsSectionProps) {
   const directions = lang === "en" ? directionsEn : directionsRu
 
   return (
-    <section id="directions" className="py-12 md:py-20 bg-muted/40 relative overflow-hidden">
-      {/* Multi-layer background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/3" />
-      
-      {/* Background decoration */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-primary/8 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary/6 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
-      <div className="absolute top-1/2 left-1/2 w-[600px] h-[600px] bg-primary/3 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
-      
-      {/* Cross pattern */}
-      <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'40\' height=\'40\' viewBox=\'0 0 40 40\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'%23000000\' fillOpacity=\'1\' fillRule=\'evenodd\'%3E%3Cpath d=\'M0 20h40v1H0zM20 0v40h1V0z\'/%3E%3C/g%3E%3C/svg%3E")' }} />
-      
-      {/* Decorative corner accents */}
-      <div className="absolute top-8 right-8 w-24 h-24 border border-primary/10 rounded-full" />
-      <div className="absolute top-8 right-8 w-16 h-16 border border-primary/15 rounded-full" />
-      <div className="absolute bottom-8 left-8 w-20 h-20 border border-primary/10 rounded-full" />
-      
+    <section id="directions" className="py-12 md:py-20 bg-muted/30 border-y border-border/60 relative overflow-hidden">
+
       <div ref={sectionRef} className="mx-auto max-w-6xl px-6 lg:px-8 relative">
         {/* Section header */}
         <div className={`max-w-2xl mb-14 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
@@ -55,7 +40,7 @@ export function DirectionsSection({ lang = "ru" }: DirectionsSectionProps) {
             return (
               <div 
                 key={index}
-                className={`group relative bg-card rounded-2xl p-5 border-2 border-border hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-1 transition-all duration-500 cursor-default ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+                className={`group relative bg-card rounded-2xl p-5 border border-border shadow-soft hover:border-primary/40 hover:shadow-soft-lg transition-all duration-500 cursor-default ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
                 style={{ transitionDelay: `${index * 50}ms` }}
               >
                 {/* Color accent bar */}

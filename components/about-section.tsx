@@ -1,6 +1,6 @@
 "use client"
 
-import { GraduationCap } from "lucide-react"
+import { GraduationCap } from "@/components/icons"
 import { educationItems as educationItemsRu, aboutFeatures as aboutFeaturesRu } from "@/config/site"
 import { educationItems as educationItemsEn, aboutFeatures as aboutFeaturesEn } from "@/config/site-en"
 import { useAnimateOnScroll } from "@/components/animate-on-scroll"
@@ -16,17 +16,8 @@ export function AboutSection({ lang = "ru" }: AboutSectionProps) {
   const aboutFeatures = lang === "en" ? aboutFeaturesEn : aboutFeaturesRu
 
   return (
-    <section id="about" className="py-12 md:py-20 relative overflow-hidden bg-gradient-to-b from-background via-muted/20 to-background">
-      {/* Background decoration */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-primary/8 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary/6 rounded-full blur-3xl" />
-      
-      {/* Dot pattern */}
-      <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle, currentColor 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
-      
-      {/* Decorative line */}
-      <div className="absolute bottom-0 right-1/3 w-px h-40 bg-gradient-to-t from-transparent via-primary/15 to-transparent" />
-      
+    <section id="about" className="py-12 md:py-20 relative overflow-hidden">
+
       <div ref={sectionRef} className="mx-auto max-w-6xl px-6 lg:px-8 relative">
         {/* Section header */}
         <div className={`max-w-2xl mb-12 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
@@ -53,11 +44,8 @@ export function AboutSection({ lang = "ru" }: AboutSectionProps) {
           <div className={`lg:col-span-7 space-y-8 transition-all duration-700 delay-100 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
             {/* Quote block */}
             <div className="relative">
-              {/* Large decorative quote mark */}
-              <div className="absolute -left-4 -top-4 text-8xl font-serif text-primary/15 select-none leading-none">"</div>
               
-              <div className="relative bg-card rounded-2xl p-6 border-2 border-border">
-                <div className="absolute left-0 top-6 bottom-6 w-1 bg-gradient-to-b from-primary via-primary/50 to-transparent rounded-full" />
+              <div className="relative bg-card rounded-2xl p-6 border border-border shadow-soft">
                 
                 <h4 className="sr-only">
                   {lang === "en"
@@ -112,7 +100,7 @@ export function AboutSection({ lang = "ru" }: AboutSectionProps) {
               {aboutFeatures.map((item, index) => (
                 <div 
                   key={index}
-                  className="flex items-center gap-3 p-3 rounded-xl border-2 border-border bg-card"
+                  className="flex items-center gap-3 p-3 rounded-xl border border-border shadow-soft bg-card"
                 >
                   <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
                     <item.icon className="h-5 w-5 text-primary" />
@@ -127,7 +115,7 @@ export function AboutSection({ lang = "ru" }: AboutSectionProps) {
 
           {/* Education timeline */}
           <div className={`lg:col-span-5 transition-all duration-700 delay-200 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
-            <div className="bg-card rounded-2xl p-6 border-2 border-border">
+            <div className="bg-card rounded-2xl p-6 border border-border shadow-soft">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
                   <GraduationCap className="h-5 w-5 text-primary" />

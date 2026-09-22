@@ -1,5 +1,5 @@
-import { GraduationCap, Heart, Award, BookOpen, Send, Users, Newspaper, MapPin, Video, FileText } from "lucide-react"
-import type { LucideIcon } from "lucide-react"
+import { GraduationCap, Heart, Award, BookOpen, Send, Users, Newspaper, MapPin, Video, FileText } from "@/components/icons"
+import type { IconType as LucideIcon } from "@/components/icons"
 import { basePath } from "@/lib/utils"
 
 // Navigation

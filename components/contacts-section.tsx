@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { ArrowUpRight, ExternalLink } from "lucide-react"
+import { ArrowUpRight, ExternalLink } from "@/components/icons"
 import { socialLinks as socialLinksRu, projects as projectsRu } from "@/config/site"
 import { socialLinks as socialLinksEn, projects as projectsEn } from "@/config/site-en"
 import { useAnimateOnScroll } from "@/components/animate-on-scroll"
@@ -17,20 +17,8 @@ export function ContactsSection({ lang = "ru" }: ContactsSectionProps) {
   const projects = lang === "en" ? projectsEn : projectsRu
 
   return (
-    <section id="contacts" className="py-12 md:py-20 relative overflow-hidden bg-gradient-to-t from-muted/40 via-background to-background">
-      {/* Background decoration */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/8 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-primary/6 rounded-full blur-3xl" />
-      <div className="absolute top-1/2 right-0 w-64 h-64 bg-primary/5 rounded-full blur-2xl translate-x-1/2" />
-      
-      {/* Subtle grid */}
-      <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: 'linear-gradient(currentColor 1px, transparent 1px), linear-gradient(90deg, currentColor 1px, transparent 1px)', backgroundSize: '48px 48px' }} />
-      
-      {/* Decorative elements */}
-      <div className="absolute top-16 right-1/4 w-2 h-2 bg-primary/30 rounded-full" />
-      <div className="absolute bottom-24 left-16 w-3 h-3 bg-primary/20 rounded-full" />
-      <div className="absolute top-1/2 left-8 w-16 h-16 border border-primary/10 rounded-full" />
-      
+    <section id="contacts" className="py-12 md:py-20 bg-muted/30 border-t border-border/60 relative overflow-hidden">
+
       <div ref={sectionRef} className="mx-auto max-w-6xl px-6 lg:px-8 relative">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           {/* Left column - Social Networks */}
@@ -60,7 +48,7 @@ export function ContactsSection({ lang = "ru" }: ContactsSectionProps) {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-center gap-4 p-5 rounded-2xl border-2 border-border bg-card transition-colors duration-300 hover:border-primary/40 hover:bg-muted/50"
+                    className="group flex items-center gap-4 p-5 rounded-2xl border border-border bg-card shadow-soft transition-all duration-300 hover:border-primary/40 hover:shadow-soft-lg"
                     style={{ 
                       transitionDelay: `${index * 100}ms`,
                     }}
@@ -102,10 +90,7 @@ export function ContactsSection({ lang = "ru" }: ContactsSectionProps) {
               </h4>
             </div>
             
-            <div className="bg-primary rounded-3xl p-6 md:p-8 text-primary-foreground relative overflow-hidden">
-              {/* Decorative circles */}
-              <div className="absolute top-0 right-0 w-48 h-48 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2" />
-              <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/2" />
+            <div className="bg-primary rounded-3xl p-6 md:p-8 text-primary-foreground relative overflow-hidden shadow-soft-lg">
               
               <div className="relative z-10">
                 <p className="text-primary-foreground/80 mb-6 leading-relaxed">
