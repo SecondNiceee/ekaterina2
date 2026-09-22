@@ -52,21 +52,6 @@ export function PublicationsSection({ lang = "ru" }: PublicationsSectionProps) {
 
   return (
     <section id="publications" className="py-12 md:py-20 bg-background relative overflow-hidden">
-      {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-muted/30 via-transparent to-muted/20" />
-      
-      {/* Background decoration */}
-      <div className="absolute top-1/2 left-0 w-72 h-72 bg-primary/8 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
-      <div className="absolute top-1/4 right-0 w-72 h-72 bg-primary/6 rounded-full blur-3xl translate-x-1/2" />
-      <div className="absolute bottom-0 left-1/3 w-96 h-96 bg-primary/4 rounded-full blur-3xl" />
-      
-      {/* Diagonal lines pattern */}
-      <div className="absolute inset-0 opacity-[0.015]" style={{ backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 35px, currentColor 35px, currentColor 36px)' }} />
-      
-      {/* Floating shapes */}
-      <div className="absolute top-20 left-20 w-3 h-3 bg-primary/20 rounded-full" />
-      <div className="absolute top-40 right-32 w-2 h-2 bg-primary/25 rounded-full" />
-      <div className="absolute bottom-32 left-1/4 w-4 h-4 bg-primary/15 rounded-full" />
 
       <div ref={sectionRef} className="mx-auto max-w-6xl px-6 lg:px-8 relative">
         {/* Section header */}
