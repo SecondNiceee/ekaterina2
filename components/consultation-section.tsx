@@ -110,7 +110,7 @@ export function ConsultationSection({ lang = "ru" }: ConsultationSectionProps) {
   }
 
   return (
-    <section id="consultation" className="py-12 md:py-20 relative overflow-hidden bg-gradient-to-b from-muted/30 via-background to-muted/20">
+    <section id="consultation" className="py-12 md:py-20 relative overflow-hidden">
 
       <div ref={sectionRef} className="mx-auto max-w-6xl px-6 lg:px-8 relative">
         {/* Section header */}
@@ -134,7 +134,7 @@ export function ConsultationSection({ lang = "ru" }: ConsultationSectionProps) {
           {consultationTypes.map((type, index) => (
             <div 
               key={index}
-              className={`group relative bg-card rounded-2xl p-6 border-2 border-border hover:border-primary/30 flex flex-col transition-all duration-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+              className={`group relative bg-card rounded-2xl p-6 border border-border shadow-soft hover:border-primary/40 hover:shadow-soft-lg flex flex-col transition-all duration-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
               style={{ transitionDelay: `${index * 100}ms` }}
             >
               {/* Color accent */}

@@ -14,7 +14,7 @@ export function DirectionsSection({ lang = "ru" }: DirectionsSectionProps) {
   const directions = lang === "en" ? directionsEn : directionsRu
 
   return (
-    <section id="directions" className="py-12 md:py-20 bg-muted/40 relative overflow-hidden">
+    <section id="directions" className="py-12 md:py-20 bg-muted/30 border-y border-border/60 relative overflow-hidden">
 
       <div ref={sectionRef} className="mx-auto max-w-6xl px-6 lg:px-8 relative">
         {/* Section header */}
@@ -40,7 +40,7 @@ export function DirectionsSection({ lang = "ru" }: DirectionsSectionProps) {
             return (
               <div 
                 key={index}
-                className={`group relative bg-card rounded-2xl p-5 border-2 border-border hover:border-primary/30 transition-all duration-500 cursor-default ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+                className={`group relative bg-card rounded-2xl p-5 border border-border shadow-soft hover:border-primary/40 hover:shadow-soft-lg transition-all duration-500 cursor-default ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
                 style={{ transitionDelay: `${index * 50}ms` }}
               >
                 {/* Color accent bar */}

@@ -30,7 +30,7 @@ export function Header({ lang = "ru" }: HeaderProps) {
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      scrolled ? "bg-background/95 backdrop-blur-md shadow-sm" : "bg-transparent"
+      scrolled ? "bg-background/85 backdrop-blur-md border-b border-border/60" : "bg-transparent border-b border-transparent"
     }`}>
       <nav className="mx-auto max-w-6xl px-6 lg:px-8" aria-label="Main navigation">
         <div className="flex h-20 items-center justify-between">
@@ -54,7 +54,7 @@ export function Header({ lang = "ru" }: HeaderProps) {
               <Link
                 key={item.name}
                 href={item.href}
-                className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors rounded-full hover:bg-muted"
+                className="nav-link whitespace-nowrap px-4 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
                 {item.name}
               </Link>
@@ -63,7 +63,7 @@ export function Header({ lang = "ru" }: HeaderProps) {
           </div>
 
           <div className="hidden lg:flex lg:items-center lg:gap-2">
-            <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-6">
+            <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-6 shadow-soft">
               <Link href="#consultation">{consultationText}</Link>
             </Button>
           </div>

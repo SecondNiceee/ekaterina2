@@ -77,7 +77,7 @@ export function PublicationsSection({ lang = "ru" }: PublicationsSectionProps) {
               size="icon"
               onClick={scrollPrev}
               disabled={!canScrollPrev}
-              className="rounded-full w-12 h-12 border-2 border-border hover:bg-primary hover:text-primary-foreground hover:border-primary disabled:opacity-40 disabled:hover:bg-transparent disabled:hover:text-foreground bg-card shadow-sm transition-all duration-300"
+              className="rounded-full w-12 h-12 border border-border shadow-soft hover:bg-primary hover:text-primary-foreground hover:border-primary disabled:opacity-40 disabled:hover:bg-transparent disabled:hover:text-foreground bg-card shadow-sm transition-all duration-300"
             >
               <ChevronLeft className="h-5 w-5" />
               <span className="sr-only">{lang === "en" ? "Previous" : "Предыдущая"}</span>
@@ -87,7 +87,7 @@ export function PublicationsSection({ lang = "ru" }: PublicationsSectionProps) {
               size="icon"
               onClick={scrollNext}
               disabled={!canScrollNext}
-              className="rounded-full w-12 h-12 border-2 border-border hover:bg-primary hover:text-primary-foreground hover:border-primary disabled:opacity-40 disabled:hover:bg-transparent disabled:hover:text-foreground bg-card shadow-sm transition-all duration-300"
+              className="rounded-full w-12 h-12 border border-border shadow-soft hover:bg-primary hover:text-primary-foreground hover:border-primary disabled:opacity-40 disabled:hover:bg-transparent disabled:hover:text-foreground bg-card shadow-sm transition-all duration-300"
             >
               <ChevronRight className="h-5 w-5" />
               <span className="sr-only">{lang === "en" ? "Next" : "Следующая"}</span>
@@ -104,7 +104,7 @@ export function PublicationsSection({ lang = "ru" }: PublicationsSectionProps) {
                 className={`flex-shrink-0 w-full md:w-[calc(33.333%-13.333px)] transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
-                <div className="group h-full bg-card border-2 border-border rounded-2xl p-6 flex flex-col hover:border-primary/40 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300">
+                <div className="group h-full bg-card border border-border shadow-soft rounded-2xl p-6 flex flex-col hover:border-primary/40 hover:shadow-soft-lg transition-all duration-300">
                   {/* Number badge */}
                   <div className="mb-4">
                     <span className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-primary/20 to-primary/5 text-primary font-serif font-bold text-sm border border-primary/10">
@@ -148,7 +148,7 @@ export function PublicationsSection({ lang = "ru" }: PublicationsSectionProps) {
             size="icon"
             onClick={scrollPrev}
             disabled={!canScrollPrev}
-            className="rounded-full w-12 h-12 border-2 border-border hover:bg-primary hover:text-primary-foreground hover:border-primary disabled:opacity-40 bg-card shadow-sm transition-all duration-300"
+            className="rounded-full w-12 h-12 border border-border shadow-soft hover:bg-primary hover:text-primary-foreground hover:border-primary disabled:opacity-40 bg-card shadow-sm transition-all duration-300"
           >
             <ChevronLeft className="h-5 w-5" />
             <span className="sr-only">Предыдущая</span>
@@ -170,7 +170,7 @@ export function PublicationsSection({ lang = "ru" }: PublicationsSectionProps) {
             size="icon"
             onClick={scrollNext}
             disabled={!canScrollNext}
-            className="rounded-full w-12 h-12 border-2 border-border hover:bg-primary hover:text-primary-foreground hover:border-primary disabled:opacity-40 bg-card shadow-sm transition-all duration-300"
+            className="rounded-full w-12 h-12 border border-border shadow-soft hover:bg-primary hover:text-primary-foreground hover:border-primary disabled:opacity-40 bg-card shadow-sm transition-all duration-300"
           >
             <ChevronRight className="h-5 w-5" />
             <span className="sr-only">Следующая</span>
