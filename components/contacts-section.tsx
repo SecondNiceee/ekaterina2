@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { ArrowUpRight, ExternalLink } from "lucide-react"
+import { ArrowUpRight, ExternalLink } from "@/components/icons"
 import { socialLinks as socialLinksRu, projects as projectsRu } from "@/config/site"
 import { socialLinks as socialLinksEn, projects as projectsEn } from "@/config/site-en"
 import { useAnimateOnScroll } from "@/components/animate-on-scroll"
@@ -17,7 +17,7 @@ export function ContactsSection({ lang = "ru" }: ContactsSectionProps) {
   const projects = lang === "en" ? projectsEn : projectsRu
 
   return (
-    <section id="contacts" className="py-12 md:py-20 relative overflow-hidden bg-gradient-to-t from-muted/40 via-background to-background">
+    <section id="contacts" className="py-12 md:py-20 bg-muted/30 border-t border-border/60 relative overflow-hidden">
 
       <div ref={sectionRef} className="mx-auto max-w-6xl px-6 lg:px-8 relative">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
@@ -48,7 +48,7 @@ export function ContactsSection({ lang = "ru" }: ContactsSectionProps) {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-center gap-4 p-5 rounded-2xl border-2 border-border bg-card transition-colors duration-300 hover:border-primary/40 hover:bg-muted/50"
+                    className="group flex items-center gap-4 p-5 rounded-2xl border border-border bg-card shadow-soft transition-all duration-300 hover:border-primary/40 hover:shadow-soft-lg"
                     style={{ 
                       transitionDelay: `${index * 100}ms`,
                     }}
@@ -90,7 +90,7 @@ export function ContactsSection({ lang = "ru" }: ContactsSectionProps) {
               </h4>
             </div>
             
-            <div className="bg-primary rounded-3xl p-6 md:p-8 text-primary-foreground relative overflow-hidden">
+            <div className="bg-primary rounded-3xl p-6 md:p-8 text-primary-foreground relative overflow-hidden shadow-soft-lg">
               
               <div className="relative z-10">
                 <p className="text-primary-foreground/80 mb-6 leading-relaxed">

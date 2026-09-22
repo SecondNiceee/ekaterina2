@@ -1,6 +1,6 @@
 "use client"
 
-import { GraduationCap } from "lucide-react"
+import { GraduationCap } from "@/components/icons"
 import { educationItems as educationItemsRu, aboutFeatures as aboutFeaturesRu } from "@/config/site"
 import { educationItems as educationItemsEn, aboutFeatures as aboutFeaturesEn } from "@/config/site-en"
 import { useAnimateOnScroll } from "@/components/animate-on-scroll"
@@ -16,7 +16,7 @@ export function AboutSection({ lang = "ru" }: AboutSectionProps) {
   const aboutFeatures = lang === "en" ? aboutFeaturesEn : aboutFeaturesRu
 
   return (
-    <section id="about" className="py-12 md:py-20 relative overflow-hidden bg-gradient-to-b from-background via-muted/20 to-background">
+    <section id="about" className="py-12 md:py-20 relative overflow-hidden">
 
       <div ref={sectionRef} className="mx-auto max-w-6xl px-6 lg:px-8 relative">
         {/* Section header */}
@@ -45,7 +45,7 @@ export function AboutSection({ lang = "ru" }: AboutSectionProps) {
             {/* Quote block */}
             <div className="relative">
               
-              <div className="relative bg-card rounded-2xl p-6 border-2 border-border">
+              <div className="relative bg-card rounded-2xl p-6 border border-border shadow-soft">
                 
                 <h4 className="sr-only">
                   {lang === "en"
@@ -100,7 +100,7 @@ export function AboutSection({ lang = "ru" }: AboutSectionProps) {
               {aboutFeatures.map((item, index) => (
                 <div 
                   key={index}
-                  className="flex items-center gap-3 p-3 rounded-xl border-2 border-border bg-card"
+                  className="flex items-center gap-3 p-3 rounded-xl border border-border shadow-soft bg-card"
                 >
                   <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
                     <item.icon className="h-5 w-5 text-primary" />
@@ -115,7 +115,7 @@ export function AboutSection({ lang = "ru" }: AboutSectionProps) {
 
           {/* Education timeline */}
           <div className={`lg:col-span-5 transition-all duration-700 delay-200 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
-            <div className="bg-card rounded-2xl p-6 border-2 border-border">
+            <div className="bg-card rounded-2xl p-6 border border-border shadow-soft">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
                   <GraduationCap className="h-5 w-5 text-primary" />
