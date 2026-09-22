@@ -21,52 +21,61 @@ export function Header({ lang = "ru" }: HeaderProps) {
   const consultationText = lang === "en" ? "Book Appointment" : "Записаться"
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20)
-    handleScroll()
-    window.addEventListener("scroll", handleScroll, { passive: true })
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20)
+    }
+    window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-50 border-b transition-colors duration-200 ${
-        scrolled || mobileMenuOpen ? "border-border bg-background" : "border-transparent bg-background/0"
-      }`}
-    >
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      scrolled ? "bg-background/95 backdrop-blur-md shadow-sm" : "bg-transparent"
+    }`}>
       <nav className="mx-auto max-w-6xl px-6 lg:px-8" aria-label="Main navigation">
-        <div className="flex h-16 items-center justify-between gap-6">
-          <Link href={homeUrl} className="flex flex-col leading-tight">
-            <span className="font-serif text-lg text-foreground">
-              {lang === "en" ? "Ekaterina Kulbachinskaya" : "Екатерина Кульбачинская"}
-            </span>
-            <span className="text-xs text-muted-foreground">
-              {lang === "en" ? "pediatric cardiologist-arrhythmologist" : "детский кардиолог-аритмолог"}
-            </span>
+        <div className="flex h-20 items-center justify-between">
+          <Link href={homeUrl} className="group flex items-center gap-3">
+            <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+              <span className="text-primary font-serif text-lg font-semibold">EK</span>
+            </div>
+            <div className="hidden sm:block">
+              <span className="text-sm font-medium text-foreground">
+                {lang === "en" ? "E. Kulbachinskaya" : "Е. Кульбачинская"}
+              </span>
+              <p className="text-xs text-muted-foreground">
+                {lang === "en" ? "cardiologist-arrhythmologist" : "кардиолог-аритмолог"}
+              </p>
+            </div>
           </Link>
 
-          <div className="hidden lg:flex lg:items-center lg:gap-7">
+          {/* Desktop navigation */}
+          <div className="hidden lg:flex lg:items-center lg:gap-1">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors rounded-full hover:bg-muted"
               >
                 {item.name}
               </Link>
             ))}
             <LanguageSwitcher />
-            <Button asChild size="sm" className="px-4">
+          </div>
+
+          <div className="hidden lg:flex lg:items-center lg:gap-2">
+            <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-6">
               <Link href="#consultation">{consultationText}</Link>
             </Button>
           </div>
 
+          {/* Mobile menu button */}
           <div className="flex items-center gap-2 lg:hidden">
             <LanguageSwitcher />
             <Button
               variant="ghost"
               size="icon"
+              className="rounded-full"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              aria-expanded={mobileMenuOpen}
               aria-label={mobileMenuOpen ? (lang === "en" ? "Close menu" : "Закрыть меню") : (lang === "en" ? "Open menu" : "Открыть меню")}
             >
               {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -74,24 +83,27 @@ export function Header({ lang = "ru" }: HeaderProps) {
           </div>
         </div>
 
+        {/* Mobile navigation */}
         {mobileMenuOpen && (
-          <div className="border-t border-border py-4 lg:hidden">
-            <div className="flex flex-col">
+          <div className="lg:hidden py-6 border-t border-border/50">
+            <div className="flex flex-col gap-2">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="border-b border-border py-3 text-base text-foreground"
+                  className="px-4 py-3 text-base text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.name}
                 </Link>
               ))}
-              <Button asChild className="mt-4 w-full">
-                <Link href="#consultation" onClick={() => setMobileMenuOpen(false)}>
-                  {lang === "en" ? "Book Appointment" : "Записаться на приём"}
-                </Link>
-              </Button>
+              <div className="pt-4 mt-2 border-t border-border/50">
+                <Button asChild className="w-full bg-primary hover:bg-primary/90 text-primary-foreground rounded-full">
+                  <Link href="#consultation" onClick={() => setMobileMenuOpen(false)}>
+                    {lang === "en" ? "Book Appointment" : "Записаться на приём"}
+                  </Link>
+                </Button>
+              </div>
             </div>
           </div>
         )}

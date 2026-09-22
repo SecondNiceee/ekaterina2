@@ -7,16 +7,26 @@ export function LanguageSwitcher() {
   const pathname = usePathname()
   const currentLang = pathname?.startsWith("/en") ? "en" : "ru"
 
-  const linkClass = (active: boolean) =>
-    `px-1 py-1 transition-colors ${active ? "text-foreground" : "text-muted-foreground hover:text-foreground"}`
-
   return (
-    <div className="flex items-center gap-1 text-sm">
-      <Link href="/" className={linkClass(currentLang === "ru")} aria-current={currentLang === "ru" ? "page" : undefined}>
+    <div className="flex items-center gap-1 rounded-full bg-muted/50 p-1">
+      <Link
+        href="/"
+        className={`px-3 py-1.5 text-sm font-medium rounded-full transition-all ${
+          currentLang === "ru"
+            ? "bg-primary text-primary-foreground shadow-sm"
+            : "text-muted-foreground hover:text-foreground"
+        }`}
+      >
         RU
       </Link>
-      <span aria-hidden="true" className="text-border">/</span>
-      <Link href="/en" className={linkClass(currentLang === "en")} aria-current={currentLang === "en" ? "page" : undefined}>
+      <Link
+        href="/en"
+        className={`px-3 py-1.5 text-sm font-medium rounded-full transition-all ${
+          currentLang === "en"
+            ? "bg-primary text-primary-foreground shadow-sm"
+            : "text-muted-foreground hover:text-foreground"
+        }`}
+      >
         EN
       </Link>
     </div>
