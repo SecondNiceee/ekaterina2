@@ -12,7 +12,12 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
+        serif: ['var(--font-serif)', 'Georgia', 'serif'],
+      },
       colors: {
+        ecg: 'hsl(var(--ecg))',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         card: {
