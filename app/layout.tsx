@@ -1,19 +1,20 @@
 import React from "react"
 import type { Metadata, Viewport } from 'next'
-import { Inter, Playfair_Display } from 'next/font/google'
+import { Onest, Source_Serif_4 } from 'next/font/google'
 import './globals.css'
 
 export const dynamic = 'force-dynamic';
 
-const inter = Inter({ 
+const onest = Onest({
   subsets: ["latin", "cyrillic"],
-  variable: '--font-inter'
+  variable: '--font-sans',
 });
 
-const playfair = Playfair_Display({ 
+const sourceSerif = Source_Serif_4({
   subsets: ["latin", "cyrillic"],
-  variable: '--font-playfair',
-  weight: ['400', '500', '600', '700']
+  variable: '--font-serif',
+  weight: ['400', '500', '600'],
+  style: ['normal', 'italic'],
 });
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://smartcardio.ru/ekaterina';
@@ -54,7 +55,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  themeColor: '#ffffff',
+  themeColor: '#fafaf8',
 }
 
 export default function RootLayout({
@@ -127,7 +128,7 @@ export default function RootLayout({
   }
 
   return (
-    <html lang="ru">
+    <html lang="ru" className={`${onest.variable} ${sourceSerif.variable} bg-background`}>
       <head>
         <link rel="alternate" hrefLang="ru" href={BASE_URL}/>
         <link rel="alternate" hrefLang="en" href={`${BASE_URL}/en`} />
@@ -137,7 +138,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={`${inter.variable} ${playfair.variable} font-sans antialiased`}>
+      <body className="font-sans antialiased">
         {children}
       </body>
     </html>

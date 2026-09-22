@@ -3,100 +3,79 @@
 @tailwind utilities;
 
 :root {
-  /* Green-tinted medical theme - HSL format for browser compatibility */
-  --background: 155 30% 97%;
-  --foreground: 155 10% 15%;
+  --background: 60 9% 98%;
+  --foreground: 165 18% 11%;
   --card: 0 0% 100%;
-  --card-foreground: 155 10% 15%;
+  --card-foreground: 165 18% 11%;
   --popover: 0 0% 100%;
-  --popover-foreground: 155 10% 15%;
-  --primary: 155 40% 28%;
-  --primary-foreground: 155 30% 97%;
-  --secondary: 155 20% 93%;
-  --secondary-foreground: 155 10% 15%;
-  --muted: 155 15% 94%;
-  --muted-foreground: 155 10% 45%;
-  --accent: 155 25% 90%;
-  --accent-foreground: 155 10% 15%;
-  --destructive: 0 84% 60%;
+  --popover-foreground: 165 18% 11%;
+  --primary: 162 45% 21%;
+  --primary-foreground: 60 9% 98%;
+  --secondary: 150 10% 94%;
+  --secondary-foreground: 165 18% 11%;
+  --muted: 150 10% 94%;
+  --muted-foreground: 165 6% 36%;
+  --accent: 150 10% 92%;
+  --accent-foreground: 165 18% 11%;
+  --destructive: 0 72% 48%;
   --destructive-foreground: 0 0% 100%;
-  --border: 155 20% 90%;
-  --input: 155 15% 93%;
-  --ring: 155 35% 35%;
-  --chart-1: 155 40% 40%;
-  --chart-2: 165 30% 45%;
-  --chart-3: 145 25% 35%;
-  --chart-4: 160 30% 42%;
-  --chart-5: 150 25% 50%;
-  --radius: 0.5rem;
-  --sidebar-background: 155 25% 96%;
-  --sidebar-foreground: 155 10% 15%;
-  --sidebar-primary: 155 40% 28%;
-  --sidebar-primary-foreground: 155 30% 97%;
-  --sidebar-accent: 155 22% 92%;
-  --sidebar-accent-foreground: 155 10% 15%;
-  --sidebar-border: 155 20% 90%;
-  --sidebar-ring: 155 35% 35%;
+  --border: 150 8% 86%;
+  --input: 150 8% 84%;
+  --ring: 162 45% 30%;
+  /* ECG paper red, used only for the millimetre grid */
+  --ecg: 4 62% 52%;
+  --radius: 0.25rem;
 }
 
 .dark {
-  --background: 155 15% 10%;
-  --foreground: 155 10% 92%;
-  --card: 155 18% 12%;
-  --card-foreground: 155 10% 92%;
-  --popover: 155 18% 12%;
-  --popover-foreground: 155 10% 92%;
-  --primary: 155 45% 42%;
-  --primary-foreground: 155 30% 97%;
-  --secondary: 155 12% 18%;
-  --secondary-foreground: 155 10% 92%;
-  --muted: 155 10% 18%;
-  --muted-foreground: 155 10% 55%;
-  --accent: 155 15% 20%;
-  --accent-foreground: 155 10% 92%;
-  --destructive: 0 62% 30%;
-  --destructive-foreground: 0 85% 60%;
-  --border: 155 12% 20%;
-  --input: 155 12% 18%;
-  --ring: 155 35% 38%;
-  --chart-1: 155 45% 42%;
-  --chart-2: 165 30% 45%;
-  --chart-3: 145 25% 38%;
-  --chart-4: 160 30% 44%;
-  --chart-5: 150 25% 50%;
-  --sidebar-background: 155 18% 12%;
-  --sidebar-foreground: 155 10% 92%;
-  --sidebar-primary: 155 45% 42%;
-  --sidebar-primary-foreground: 155 30% 97%;
-  --sidebar-accent: 155 12% 18%;
-  --sidebar-accent-foreground: 155 10% 92%;
-  --sidebar-border: 155 12% 20%;
-  --sidebar-ring: 155 35% 38%;
+  --background: 165 14% 8%;
+  --foreground: 60 9% 94%;
+  --card: 165 12% 11%;
+  --card-foreground: 60 9% 94%;
+  --popover: 165 12% 11%;
+  --popover-foreground: 60 9% 94%;
+  --primary: 158 38% 52%;
+  --primary-foreground: 165 14% 8%;
+  --secondary: 165 10% 15%;
+  --secondary-foreground: 60 9% 94%;
+  --muted: 165 10% 15%;
+  --muted-foreground: 150 6% 64%;
+  --accent: 165 10% 17%;
+  --accent-foreground: 60 9% 94%;
+  --destructive: 0 62% 50%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 165 8% 20%;
+  --input: 165 8% 22%;
+  --ring: 158 38% 52%;
+  --ecg: 4 70% 60%;
 }
 
 @layer base {
   * {
-    border-color: var(--border);
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
   }
   body {
     @apply bg-background text-foreground;
+    font-feature-settings: "kern", "liga";
+  }
+  ::selection {
+    background: hsl(var(--primary) / 0.18);
   }
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: hsl(var(--muted));
-}
-
-::-webkit-scrollbar-thumb {
-  background: hsl(var(--muted-foreground));
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: hsl(var(--foreground));
+@layer components {
+  .ecg-paper {
+    background-color: hsl(var(--ecg) / 0.05);
+    background-image:
+      linear-gradient(hsl(var(--ecg) / 0.28) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--ecg) / 0.28) 1px, transparent 1px),
+      linear-gradient(hsl(var(--ecg) / 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--ecg) / 0.1) 1px, transparent 1px);
+    background-size: 40px 40px, 40px 40px, 8px 8px, 8px 8px;
+    background-position: -1px -1px;
+  }
 }
