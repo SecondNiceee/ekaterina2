@@ -5,7 +5,8 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-export const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ''
+// Must match the basePath default in next.config.mjs
+export const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '/ekaterina'
 
 export function assetPath(path: string): string {
   return `${basePath}${path.startsWith('/') ? path : '/' + path}`
