@@ -22,7 +22,7 @@ export function AboutSection({ lang = "ru" }: AboutSectionProps) {
   return (
     <section id="about" className="py-12 md:py-20 relative overflow-hidden">
       <div ref={sectionRef} className="mx-auto max-w-6xl px-6 lg:px-8 relative">
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           {/* Intro */}
           <div className={`lg:col-span-7 ${reveal("")}`}>
             <p className="text-primary font-semibold mb-3 tracking-wide uppercase text-sm">
@@ -42,13 +42,55 @@ export function AboutSection({ lang = "ru" }: AboutSectionProps) {
               }
             </h3>
 
+            <blockquote className="mt-8 border-l-2 border-primary/40 pl-5">
+              <h4 className="sr-only">
+                {lang === "en"
+                  ? "Medical philosophy of Ekaterina Kulbachinskaya"
+                  : "Врачебная философия Екатерины Кульбачинской"
+                }
+              </h4>
+              <div className="flex flex-col gap-4">
+                {lang === "en" ? (
+                  <>
+                    <p className="text-base md:text-lg leading-relaxed text-muted-foreground italic text-pretty">
+                      It is important for me to establish the <span className="text-primary font-semibold not-italic">cause</span> of heart rhythm disorders and understand what <span className="text-primary font-semibold not-italic">risks</span> are associated with a particular disease in a specific person.
+                    </p>
+                    <p className="text-base md:text-lg leading-relaxed text-muted-foreground italic text-pretty">
+                      It is essential that after a consultation, the family not only receives a conclusion, but also <span className="text-primary font-semibold not-italic">clarity</span> — what to do next, the logic behind decision-making, what approaches to diagnosis and treatment are optimal, and what to pay attention to.
+                    </p>
+                    <p className="text-base md:text-lg leading-relaxed text-muted-foreground italic text-pretty">
+                      A separate area of my work involves managing children with <strong className="font-bold not-italic text-foreground">inherited</strong> (genetically determined) arrhythmias, which typically requires more thorough and long-term monitoring.
+                    </p>
+                    <p className="text-base md:text-lg leading-relaxed text-muted-foreground italic text-pretty">
+                      It is not always possible to prevent disease development, but <strong className="font-bold not-italic text-foreground">predicting</strong> its course, timely identifying and eliminating adverse consequences — this is one of the key tasks of clinical medicine.
+                    </p>
+                  </>
+                ) : (
+                  <>
+                    <p className="text-base md:text-lg leading-relaxed text-muted-foreground italic text-pretty">
+                      Для меня важно установить <span className="text-primary font-semibold not-italic">причину</span> развития нарушений сердечного ритма и понять, какие <span className="text-primary font-semibold not-italic">риски</span> связаны с тем или иным заболеванием у конкретного человека.
+                    </p>
+                    <p className="text-base md:text-lg leading-relaxed text-muted-foreground italic text-pretty">
+                      Существенно, чтобы после консультации у семьи оставалось не только заключение, но и <span className="text-primary font-semibold not-italic">ясность</span> — что делать дальше, какова логика принятия решений, какие подходы к диагностике и лечению оптимальны и на что обращать внимание.
+                    </p>
+                    <p className="text-base md:text-lg leading-relaxed text-muted-foreground italic text-pretty">
+                      Отдельное направление моей работы представляет ведение детей с <strong className="font-bold not-italic text-foreground">наследственными</strong> (генетически обусловленными) аритмиями, что, как правило, требует более тщательного и длительного наблюдения.
+                    </p>
+                    <p className="text-base md:text-lg leading-relaxed text-muted-foreground italic text-pretty">
+                      Не всегда развитие заболевания можно предотвратить, но <strong className="font-bold not-italic text-foreground">прогнозировать</strong> течение, вовремя заподозрить и устранить неблагоприятные последствия — это одна из ключевых задач клинической медицины.
+                    </p>
+                  </>
+                )}
+              </div>
+            </blockquote>
+
             <h4 className="sr-only">
               {lang === "en"
                 ? "Key qualities of cardiologist Ekaterina Kulbachinskaya"
                 : "Ключевые качества кардиолога Екатерины Кульбачинской"
               }
             </h4>
-            <div className="mt-10 grid sm:grid-cols-3 gap-3">
+            <div className="mt-8 grid sm:grid-cols-3 gap-3">
               {aboutFeatures.map((item, index) => (
                 <div
                   key={index}
@@ -64,7 +106,7 @@ export function AboutSection({ lang = "ru" }: AboutSectionProps) {
           </div>
 
           {/* Video */}
-          <div className={`lg:col-span-5 ${reveal("delay-150")}`}>
+          <div className={`lg:col-span-5 lg:sticky lg:top-28 ${reveal("delay-150")}`}>
             <VideoPlayer lang={lang} />
           </div>
         </div>
